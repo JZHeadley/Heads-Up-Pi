@@ -26,8 +26,9 @@ def main() -> None:
     The logic of the file.
     """
     clientObj = Client()
-    clientObj.connect('http://localhost:5000')
-    clientObj.emit('flarba', {'foo': 'bar'}, namespace='/narba')
+    clientObj.connect('http://127.0.0.1:5000/')
+    clientObj.emit('deposit', {'foo': 'bar'}, namespace='/b2w')
+    pass
 
 
 if __name__ == '__main__':
