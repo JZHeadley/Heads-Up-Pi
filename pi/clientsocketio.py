@@ -14,6 +14,8 @@ Target environment: python 3.7
 # End standard library imports.
 
 # Start third party imports.
+from time import sleep
+
 from socketio import Client
 # End third party imports.
 
@@ -21,14 +23,27 @@ from socketio import Client
 # End project imports.
 
 
+CLIENT_OBJ = Client()
+
+
+@CLIENT_OBJ.on('withdraw', namespace='/bobby')
+def message(jsonObj):
+    """
+    """
+    print('got message')
+    print(jsonObj)
+
+
 def main() -> None:
     """
     The logic of the file.
     """
-    clientObj = Client()
-    clientObj.connect('http://127.0.0.1:5000/')
-    clientObj.emit('deposit', {'foo': 'bar'}, namespace='/b2w')
-    pass
+    CLIENT_OBJ.connect('http://127.0.0.1:5000/')
+    CLIENT_OBJ.emit('deposit', {'foo': 'bar'}, namespace='/bobby')
+    CLIENT_OBJ.emit('withdraw', namespace='/bobby')
+    CLIENT_OBJ.emit('deposit', {'332341': '36dfdsaf'}, namespace='/bobby')
+    sleep(1)
+    CLIENT_OBJ.emit('withdraw', namespace='/bobby')
 
 
 if __name__ == '__main__':

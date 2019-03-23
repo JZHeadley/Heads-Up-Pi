@@ -15,7 +15,7 @@ Target environment: python 3.7
 
 # Start third party imports.
 from flask import Flask
-from flask_socketio import SocketIO, send
+from flask_socketio import SocketIO, emit, send
 # End third party imports.
 
 # Start project imports.
@@ -27,21 +27,22 @@ SOCKET_IO_OBJ = SocketIO(FLASK_OBJ)
 JSON_OBJ = dict()
 
 
-@SOCKET_IO_OBJ.on('deposit', namespace='/b2w')
-def get_flarba(receiveJsonObj):
+@SOCKET_IO_OBJ.on('deposit', namespace='/bobby')
+def deposit(receiveJsonObj):
     """
     """
-    print('Gotcha')
+    print('deposit')
     print(receiveJsonObj)
     global JSON_OBJ
     JSON_OBJ = receiveJsonObj
 
 
-@SOCKET_IO_OBJ.on('withdraw', namespace='/b2w')
-def get():
+@SOCKET_IO_OBJ.on('withdraw', namespace='/bobby')
+def withdraw():
     """
     """
-    send(JSON_OBJ, json=True)
+    print('withdraw')
+    emit('withdraw', JSON_OBJ, broadcast=True)
 
 
 if __name__ == '__main__':
