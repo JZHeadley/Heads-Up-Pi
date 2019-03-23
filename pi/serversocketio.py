@@ -35,14 +35,7 @@ def deposit(receiveJsonObj):
     print(receiveJsonObj)
     global JSON_OBJ
     JSON_OBJ = receiveJsonObj
-
-
-@SOCKET_IO_OBJ.on('withdraw', namespace='/bobby')
-def withdraw():
-    """
-    """
-    print('withdraw')
-    emit('withdraw', JSON_OBJ, broadcast=True)
+    emit('withdraw', JSON_OBJ, broadcast=True, namespace='/bobby')
 
 
 if __name__ == '__main__':

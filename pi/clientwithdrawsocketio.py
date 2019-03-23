@@ -37,7 +37,7 @@ def main() -> None:
     The logic of the file.
     """
     CLIENT_OBJ.connect('http://127.0.0.1:5000/')
-    while True:
+    # while True:
 
     CLIENT_OBJ.wait()
 
