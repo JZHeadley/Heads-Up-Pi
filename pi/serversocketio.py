@@ -15,7 +15,7 @@ Target environment: python 3.7
 
 # Start third party imports.
 from flask import Flask
-from flask_socketio import SocketIO, emit, send
+from flask_socketio import SocketIO, emit
 # End third party imports.
 
 # Start project imports.

@@ -14,8 +14,6 @@ Target environment: python 3.7
 # End standard library imports.
 
 # Start third party imports.
-from time import sleep
-
 from socketio import Client
 # End third party imports.
 
@@ -39,11 +37,9 @@ def main() -> None:
     The logic of the file.
     """
     CLIENT_OBJ.connect('http://127.0.0.1:5000/')
-    CLIENT_OBJ.emit('deposit', {'foo': 'bar'}, namespace='/bobby')
-    CLIENT_OBJ.emit('withdraw', namespace='/bobby')
-    CLIENT_OBJ.emit('deposit', {'332341': '36dfdsaf'}, namespace='/bobby')
-    sleep(1)
-    CLIENT_OBJ.emit('withdraw', namespace='/bobby')
+    while True:
+
+    CLIENT_OBJ.wait()
 
 
 if __name__ == '__main__':

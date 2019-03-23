@@ -1,3 +1,4 @@
 python-socketio
 flask-socketio
 aiohttp
+pybluez
