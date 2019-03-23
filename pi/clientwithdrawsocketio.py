@@ -21,14 +21,25 @@ from socketio import Client
 # End project imports.
 
 
+CLIENT_OBJ = Client()
+
+
+@CLIENT_OBJ.on('withdraw', namespace='/bobby')
+def message(jsonObj):
+    """
+    """
+    print('got message')
+    print(jsonObj)
+
+
 def main() -> None:
     """
     The logic of the file.
     """
-    clientObj = Client()
-    clientObj.connect('http://127.0.0.1:5000/')
-    clientObj.emit('deposit', {'foo': 'bar'}, namespace='/b2w')
-    pass
+    CLIENT_OBJ.connect('http://127.0.0.1:5000/')
+    # while True:
+
+    CLIENT_OBJ.wait()
 
 
 if __name__ == '__main__':

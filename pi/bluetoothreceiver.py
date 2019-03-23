@@ -67,7 +67,21 @@ def setup_logging():
     # Replace stderr with logging to file at ERROR level
     sys.stderr = LoggerHelper(logger, logging.ERROR)
 
-
+def get_heading_string(bearing: float) -> str:
+    temp = bearing
+    ret = ""
+    while abs(temp) > 360:
+        temp -= 360
+    if abs(temp) < 55:
+        ret += "N"
+    if abs(temp) > 125:
+        ret += "S"
+    if temp > 35 and temp < 145:
+        ret += "E"
+    if temp < -35 and temp > -145:
+        ret += "W"
+    return ret
+    
 # Main loop
 def main():
     # Setup logging
