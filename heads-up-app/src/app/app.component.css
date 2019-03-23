@@ -1,5 +1,7 @@
 .wrapper {
     display: flex;
+    font-family: 'RobotoDraft', 'Roboto', 'Helvetica Neue, Helvetica, Arial', sans-serif;
+    font-size: 10pt;
   }
 .wrapper > div {
     flex: 1;

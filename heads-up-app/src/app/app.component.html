@@ -1,12 +1,10 @@
 <div class="wrapper">
   <div>
-  <ngx-gauge [type]="gaugeType" 
-           [value]="gaugeValue" 
-           [label]="gaugeLabel"  
-           [append]="gaugeAppendText">
-</ngx-gauge>
+    <p>
+      <ngx-gauge [type]="gaugeType" [size]=600 [min]="min" [max]="max" [value]="gaugeValue" [thick]="thick"
+        [thresholds]="thresholdConfig" [label]="gaugeLabel" [append]="gaugeAppendText">
+      </ngx-gauge>
+    </p>
+  </div>
+  <div>Navigation pane goes here</div>
 </div>
-  <div >Two</div>
-</div>
-
-
