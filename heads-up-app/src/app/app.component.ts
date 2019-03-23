@@ -6,6 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  // Map Info
+  lat: number = 37.269148;
+  lng: number = -76.715872;
+
+  // Speedometer Info
   gaugeType = "arch";
   gaugeValue = 16.3;
   gaugeLabel = "Speed";

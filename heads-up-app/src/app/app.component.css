@@ -6,3 +6,6 @@
 .wrapper > div {
     flex: 1;
 }
+agm-map {
+  height: 500px;
+}
