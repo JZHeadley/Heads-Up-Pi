@@ -11,6 +11,8 @@ Target environment: python 3.7
 """
 
 # Start standard library imports.
+from random import choice
+from string import ascii_letters
 # End standard library imports.
 
 # Start third party imports.
@@ -32,6 +34,10 @@ def main() -> None:
     CLIENT_OBJ.connect('http://127.0.0.1:5000/')
     CLIENT_OBJ.emit('deposit', {'foo': 'bar'}, namespace='/bobby')
     CLIENT_OBJ.emit('deposit', {'332341': '36dfdsaf'}, namespace='/bobby')
+    while True:
+        bob = dict()
+        bob[choice(ascii_letters)] = choice(ascii_letters)
+        CLIENT_OBJ.emit('deposit', bob, namespace='/bobby')
 
 
 if __name__ == '__main__':
