@@ -45,7 +45,7 @@ def process_json(jsonObj):
         jsonObj['bearing'] = 'E'
     elif 112.5 < bearingFloat < 157.5:
         jsonObj['bearing'] = 'SE'
-    elif 157.5 <= bearingFloat <= 180 or -157.5 <= bearingFloat <= -180:
+    elif 157.5 <= bearingFloat <= 180 or -180 <= bearingFloat <= -157.5:
         jsonObj['bearing'] = 'S'
     elif -157.5 < bearingFloat < -122.5:
         jsonObj['bearing'] = 'SW'
@@ -53,6 +53,8 @@ def process_json(jsonObj):
         jsonObj['bearing'] = 'W'
     elif -67.5 < bearingFloat < -22.5:
         jsonObj['bearing'] = 'NW'
+    if isinstance(jsonObj['bearing'], float):
+        jsonObj['bearing'] = 'Micah or Zephyr is dum.'
     return jsonObj
 
 
