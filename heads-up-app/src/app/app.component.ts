@@ -24,9 +24,10 @@ export class AppComponent implements OnInit, OnDestroy {
 
   // Speedometer Info
   gaugeType = "arch";
-  gaugeValue = 16.3;
-  gaugeLabel = "Speed";
+  speed = 16.3;
+  // gaugeLabel = "Speed";
   gaugeAppendText = "mph";
+  bearing = "NE";
   min = 0;
   max = 30;
   thick = 40;
