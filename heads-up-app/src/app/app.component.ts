@@ -1,14 +1,26 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+// import { Control } from '@angular/common';
+import { LocationService } from './location.service';
+
+
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  providers: [ LocationService ]
 })
-export class AppComponent {
+export class AppComponent implements OnInit, OnDestroy {
+  allInfo = [];
+  connection;
+  info;
+
   // Map Info
   lat: number = 37.269148;
   lng: number = -76.715872;
+
+  // Compass is a bearing from 180 to -180
+
 
   // Speedometer Info
   gaugeType = "arch";
@@ -52,5 +64,17 @@ export class AppComponent {
     '30': {color: '#B8191F'}  
   }
 
+  constructor(private locationService:LocationService) {}
+  
+  ngOnInit() {
+    this.connection = this.locationService.getInfo().subscribe(info => {
+      this.allInfo.push(info);
+      console.log(info)
+    })
+  }
+
+  ngOnDestroy() {
+    this.connection.unsubscribe();
+  }
   
 }
