@@ -18,7 +18,7 @@ export class AppComponent implements OnInit, OnDestroy {
   // Map Info
   lat: number = 37.269148;
   lng: number = -76.715872;
-  bearing = "";
+  bearing = "NE";
 
   iconUrl = {
     url: require('./currentLocation.png'), // gives a data://<value>
