@@ -6,7 +6,7 @@
   </div>
   <div class="mapWrapper">
     <agm-map [zoom]="19" [latitude]="lat" [longitude]="lng" [streetViewControl]="false" [zoomControl]="false">
-      <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+      <agm-marker [latitude]="lat" [longitude]="lng" [iconUrl]="iconUrl"></agm-marker>
     </agm-map>
     <div class="compass">
       <h1>{{bearing}}</h1>
