@@ -18,16 +18,16 @@ export class AppComponent implements OnInit, OnDestroy {
   // Map Info
   lat: number = 37.269148;
   lng: number = -76.715872;
+  bearing = "";
 
   // Compass is a bearing from 180 to -180
 
 
   // Speedometer Info
   gaugeType = "arch";
-  speed = 16.3;
+  speed = 0;
   // gaugeLabel = "Speed";
   gaugeAppendText = "mph";
-  bearing = "NE";
   min = 0;
   max = 30;
   thick = 40;
@@ -71,6 +71,10 @@ export class AppComponent implements OnInit, OnDestroy {
     this.connection = this.locationService.getInfo().subscribe(info => {
       this.allInfo.push(info);
       console.log(info)
+      this.lat = info['lat'];
+      this.lng = info['long'];
+      this.bearing = info['bearing'];
+      this.speed = info['speed'];
     })
   }
 
