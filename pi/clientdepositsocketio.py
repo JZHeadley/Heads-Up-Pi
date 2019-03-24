@@ -58,6 +58,7 @@ def main() -> None:
                 while True:
                     emitDict = get_json_from_socket(socketObj=socketObj)
                     if emitDict is not None:
+                        print('Sending data: "{}".'.format(emitDict))
                         CLIENT_OBJ.emit('deposit', emitDict)
             except IOError as exceptionStr:
                 print('Exception occured: "{}"'.format(exceptionStr))
