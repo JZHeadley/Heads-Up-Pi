@@ -24,7 +24,7 @@ from socketio import Client
 CLIENT_OBJ = Client()
 
 
-@CLIENT_OBJ.on('withdraw', namespace='/bobby')
+@CLIENT_OBJ.on('withdraw')
 def message(jsonObj):
     """
     """

@@ -27,7 +27,7 @@ SOCKET_IO_OBJ = SocketIO(FLASK_OBJ)
 JSON_OBJ = dict()
 
 
-@SOCKET_IO_OBJ.on('deposit', namespace='/bobby')
+@SOCKET_IO_OBJ.on('deposit')
 def deposit(receiveJsonObj):
     """
     """
@@ -35,7 +35,7 @@ def deposit(receiveJsonObj):
     print(receiveJsonObj)
     global JSON_OBJ
     JSON_OBJ = receiveJsonObj
-    emit('withdraw', JSON_OBJ, broadcast=True, namespace='/bobby')
+    emit('withdraw', JSON_OBJ, broadcast=True)
 
 
 if __name__ == '__main__':
