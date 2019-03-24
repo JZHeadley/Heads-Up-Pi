@@ -24,10 +24,10 @@ export class AppComponent implements OnInit, OnDestroy {
 
   // Speedometer Info
   gaugeType = "arch";
-  speed = 16.3;
+  speed = 0;
   // gaugeLabel = "Speed";
   gaugeAppendText = "mph";
-  bearing = "NE";
+  bearing = "";
   min = 0;
   max = 30;
   thick = 40;
@@ -71,6 +71,11 @@ export class AppComponent implements OnInit, OnDestroy {
     this.connection = this.locationService.getInfo().subscribe(info => {
       this.allInfo.push(info);
       console.log(info)
+this.lat = info['lat'];
+this.lng = info['long'];
+this.speed = info['speed'];
+this.bearing = info['bearing'];
+
     })
   }
 

@@ -36,6 +36,7 @@ def get_json_from_socket(socketObj) -> dict:
     """
     receiveBytes = socketObj.recv(1024)
     if len(receiveBytes) == 0:
+        print("Received 0 bytes")
         return None
     return loads(receiveBytes.decode('utf-8'))
 

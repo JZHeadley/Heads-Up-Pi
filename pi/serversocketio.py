@@ -14,7 +14,7 @@ Target environment: python 3.7
 # End standard library imports.
 
 # Start third party imports.
-from flask import Flask
+from flask import Flask, send_from_directory
 from flask_socketio import SocketIO, emit
 # End third party imports.
 
@@ -26,6 +26,13 @@ FLASK_OBJ = Flask(__name__)
 SOCKET_IO_OBJ = SocketIO(FLASK_OBJ)
 JSON_OBJ = dict()
 
+@FLASK_OBJ.route('/<path:path>',methods=['GET'])
+def static_proxy(path):
+    return send_from_directory('./heads-up-app/',path)
+
+@FLASK_OBJ.route('/')
+def root():
+    return send_from_directory('./heads-up-app/','index.html')
 
 @SOCKET_IO_OBJ.on('deposit')
 def deposit(receiveJsonObj):
