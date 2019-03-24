@@ -1,6 +1,7 @@
 div {
   font-family: 'RobotoDraft', 'Roboto', 'Helvetica Neue, Helvetica, Arial', sans-serif;
   font-size: 10pt;
+  color: #000000;
 }
 
 .mapWrapper {
@@ -31,12 +32,14 @@ h1{
   position: absolute;
   left: 10px;
   bottom: 0;
+  background-color: #FFFFFF;
 }
 
 .compass { 
+  background-color: #FFFFFF;
   position: absolute; 
   left: 50px;
   top: 10px;
   z-index: 99; 
-  font-size: 24pt;
+  font-size: 40pt;
 }

@@ -324,6 +324,9 @@ export class AppComponent implements OnInit, OnDestroy {
             },
             {
                 "lightness": 16
+            },
+            {
+                "weight": 14
             }
         ]
     },
@@ -332,7 +335,10 @@ export class AppComponent implements OnInit, OnDestroy {
         "elementType": "labels.text",
         "stylers": [
             {
-                "visibility": "off"
+                "visibility": "on"
+            },
+            {
+              "color": "#FFFFFF"
             }
         ]
     },
