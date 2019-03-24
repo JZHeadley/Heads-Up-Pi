@@ -1,11 +1,30 @@
 .wrapper {
-    display: flex;
-    font-family: 'RobotoDraft', 'Roboto', 'Helvetica Neue, Helvetica, Arial', sans-serif;
-    font-size: 10pt;
-  }
-.wrapper > div {
-    flex: 1;
+  display: flex;
+  font-family: 'RobotoDraft', 'Roboto', 'Helvetica Neue, Helvetica, Arial', sans-serif;
+  font-size: 10pt;
 }
+
+.wrapper > div {
+  transform: rotate(-90deg);
+  flex: 1;
+}
+
+.mapWrapper {
+  position: relative;
+}
+
 agm-map {
   height: 500px;
+}
+
+h1{
+  margin: 0;
+}
+
+.compass { 
+  position: absolute; 
+  right: 20px;
+  top: 10px;
+  z-index: 99; 
+  font-size: 24pt;
 }

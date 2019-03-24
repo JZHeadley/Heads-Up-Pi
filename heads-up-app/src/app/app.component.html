@@ -1,14 +1,15 @@
 <div class="wrapper">
   <div>
-    <p>
-      <ngx-gauge [type]="gaugeType" [size]=600 [min]="min" [max]="max" [value]="gaugeValue" [thick]="thick"
-        [thresholds]="thresholdConfig" [label]="gaugeLabel" [append]="gaugeAppendText">
-      </ngx-gauge>
-    </p>
+    <ngx-gauge [type]="gaugeType" [size]=600 [min]="min" [max]="max" [value]="speed" [thick]="thick"
+      [thresholds]="thresholdConfig" [append]="gaugeAppendText">
+    </ngx-gauge>
   </div>
-  <div>
-    <agm-map [zoom]="16" [latitude]="lat" [longitude]="lng" [streetViewControl]="false" [zoomControl]="false">
+  <div class="mapWrapper">
+    <agm-map [zoom]="19" [latitude]="lat" [longitude]="lng" [streetViewControl]="false" [zoomControl]="false">
       <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
     </agm-map>
+    <div class="compass">
+      <h1>{{bearing}}</h1>
+    </div>
   </div>
 </div>
