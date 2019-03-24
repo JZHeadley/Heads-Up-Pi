@@ -107,7 +107,7 @@ export class AppComponent implements OnInit, OnDestroy {
         "elementType": "labels.icon",
         "stylers": [
             {
-                "visibility": "off"
+                "visibility": "on"
             }
         ]
     },
@@ -116,7 +116,7 @@ export class AppComponent implements OnInit, OnDestroy {
         "elementType": "all",
         "stylers": [
             {
-                "visibility": "off"
+                "visibility": "on"
             }
         ]
     },
@@ -152,7 +152,7 @@ export class AppComponent implements OnInit, OnDestroy {
         "elementType": "all",
         "stylers": [
             {
-                "visibility": "off"
+                "visibility": "on"
             }
         ]
     },
@@ -173,7 +173,7 @@ export class AppComponent implements OnInit, OnDestroy {
         "elementType": "all",
         "stylers": [
             {
-                "visibility": "off"
+                "visibility": "on"
             }
         ]
     },
@@ -194,7 +194,7 @@ export class AppComponent implements OnInit, OnDestroy {
         "elementType": "all",
         "stylers": [
             {
-                "visibility": "off"
+                "visibility": "on"
             }
         ]
     },
@@ -245,7 +245,7 @@ export class AppComponent implements OnInit, OnDestroy {
         "elementType": "labels.text",
         "stylers": [
             {
-                "visibility": "off"
+                "visibility": "on"
             }
         ]
     },
@@ -281,7 +281,7 @@ export class AppComponent implements OnInit, OnDestroy {
         "elementType": "labels.text",
         "stylers": [
             {
-                "visibility": "off"
+                "visibility": "on"
             }
         ]
     },
@@ -302,7 +302,7 @@ export class AppComponent implements OnInit, OnDestroy {
         "elementType": "labels.text",
         "stylers": [
             {
-                "visibility": "off"
+                "visibility": "on"
             }
         ]
     },
@@ -332,7 +332,7 @@ export class AppComponent implements OnInit, OnDestroy {
         "elementType": "labels.text",
         "stylers": [
             {
-                "visibility": "off"
+                "visibility": "on"
             }
         ]
     },
@@ -341,7 +341,7 @@ export class AppComponent implements OnInit, OnDestroy {
         "elementType": "all",
         "stylers": [
             {
-                "visibility": "off"
+                "visibility": "on"
             }
         ]
     },
@@ -362,7 +362,7 @@ export class AppComponent implements OnInit, OnDestroy {
         "elementType": "all",
         "stylers": [
             {
-                "visibility": "off"
+                "visibility": "on"
             }
         ]
     },
