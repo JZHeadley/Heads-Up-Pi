@@ -28,11 +28,42 @@ JSON_OBJ = dict()
 
 @FLASK_OBJ.route('/<path:path>',methods=['GET'])
 def static_proxy(path):
-    return send_from_directory('./heads-up-app/',path)
+    return send_from_directory('../heads-up-app/dist/heads-up-app/',path)
 
 @FLASK_OBJ.route('/')
 def root():
-    return send_from_directory('./heads-up-app/','index.html')
+    return send_from_directory('../heads-up-app/dist/heads-up-app/','index.html')
+
+def process_json(jsonObj):
+    """
+    {
+    lat: location.latitude,
+    long: + location.longitude,
+    speed: abs(speedVal),
+    bearing: bearingVal
+    }
+    """
+    bearingFloat = float(jsonObj['bearing'])
+    if -22.5 <= bearingFloat <= 22.5:
+        jsonObj['bearing'] = 'N'
+    elif 22.5 < bearingFloat < 67.5:
+        jsonObj['bearing'] = 'NE'
+    elif 67.5 <= bearingFloat <= 112.5:
+        jsonObj['bearing'] = 'E'
+    elif 112.5 < bearingFloat < 157.5:
+        jsonObj['bearing'] = 'SE'
+    elif 157.5 <= bearingFloat <= 180 or -180 <= bearingFloat <= -157.5:
+        jsonObj['bearing'] = 'S'
+    elif -157.5 < bearingFloat < -122.5:
+        jsonObj['bearing'] = 'SW'
+    elif -122.5 <= bearingFloat <= -67.5:
+        jsonObj['bearing'] = 'W'
+    elif -67.5 < bearingFloat < -22.5:
+        jsonObj['bearing'] = 'NW'
+    if isinstance(jsonObj['bearing'], float):
+        jsonObj['bearing'] = 'Micah or Zephyr is dum.'
+    return jsonObj
+
 
 @SOCKET_IO_OBJ.on('deposit')
 def deposit(receiveJsonObj):
@@ -41,7 +72,7 @@ def deposit(receiveJsonObj):
     print('deposit')
     print(receiveJsonObj)
     global JSON_OBJ
-    JSON_OBJ = receiveJsonObj
+    JSON_OBJ = process_json(jsonObj=receiveJsonObj)
     emit('withdraw', JSON_OBJ, broadcast=True)
 
 
