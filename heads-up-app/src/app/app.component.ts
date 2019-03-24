@@ -36,7 +36,7 @@ export class AppComponent implements OnInit, OnDestroy {
   gaugeAppendText = "mph";
   min = 0;
   max = 30;
-  thick = 40;
+  thick = 35;
   thresholdConfig = {
     '0': { color: '#0EE500' },
     '1': { color: '#28E701' },
