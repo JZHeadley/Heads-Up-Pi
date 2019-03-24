@@ -17,7 +17,7 @@ export class AppComponent implements OnInit, OnDestroy {
 
   // Map Info
   lat: number = 37.269148;
-  lng: number = -76.715872;
+  lng: number = -76.715872+.0014;
   bearing = "NE";
 
   iconUrl = {
@@ -26,7 +26,7 @@ export class AppComponent implements OnInit, OnDestroy {
       height: 50,
       width: 50
     },
-    anchor: { x: 23, y: 26 }
+    anchor: { x: 555, y: 26 }
 }
 
   // Speedometer Info
@@ -78,7 +78,7 @@ export class AppComponent implements OnInit, OnDestroy {
       this.allInfo.push(info);
       console.log(info)
       this.lat = info['lat'];
-      this.lng = info['long'];
+      this.lng = info['long']+.0014;
       this.bearing = info['bearing'];
       this.speed = info['speed'];
     })
